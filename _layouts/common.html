@@ -11,10 +11,10 @@
         {{ page.title | append: " | " | append: site.name }}
       {% endif %}
     </title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700|Ubuntu:400,700">
     <script type="text/javascript" src="https://use.fontawesome.com/0523816ffe.js"></script>
-    <link rel="icon" type="image/ico" href="/img/favicon.ico" />
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico" />
     {% seo title=false %}
   </head>
   <body>
@@ -86,7 +86,7 @@
       </div> <!-- /container -->
       <footer>
         <ul>
-          <li class="cc_img"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/img/cc.png" alt="Creative Commons Licence"></a></li>
+          <li class="cc_img"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/assets/images/cc.png" alt="Creative Commons Licence"></a></li>
           <li class="cc_text"><p>All original content on this site written by <a href="http://syntheta.se/" target="_blank">D.L. Allen</a> and licenced under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence</a>.</p></li>
         </ul>
       </footer>
@@ -99,7 +99,7 @@
           element.async = false;
           document.body.appendChild(element);
           element = document.createElement("script");
-          element.src = "/js/howtoscience.js";
+          element.src = "/assets/javascript/main.js";
           element.type = "text/javascript";
           element.async = false;
           document.body.appendChild(element);

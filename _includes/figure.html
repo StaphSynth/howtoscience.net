@@ -4,7 +4,21 @@
 {% endcomment %}
 
 <div class="figure">
-  {% if include.clickable and include.img %}<a class="figure_link" href="/img/{{ include.img }}" target="_blank">{% endif %}{% if include.img %}<img src="/img/{{ include.img }}" alt="{{ include.alt }}">{% endif %}{% if include.clickable %}</a>{% endif %}
-  {% if include.example %}<p>{{ include.example }}</p>{% endif %}
+  {% if include.clickable and include.img %}
+    <a class="figure_link" href="/assets/images/{{ include.img }}" target="_blank">
+  {% endif %}
+
+  {% if include.img %}
+    <img src="/assets/images/{{ include.img }}" alt="{{ include.alt }}">
+  {% endif %}
+
+  {% if include.clickable %}
+    </a>
+  {% endif %}
+
+  {% if include.example %}
+    <p>{{ include.example }}</p>
+  {% endif %}
+
   <p class="legend">{{ include.caption }}</p>
 </div>
