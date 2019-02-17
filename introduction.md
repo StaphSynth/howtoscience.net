@@ -3,7 +3,7 @@ layout: common
 title: Introduction
 description: How to write the introduction to a scientific paper or report
 permalink: /introduction/
-navId: 3
+nav_id: 3
 ---
 
 ### The Introduction

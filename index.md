@@ -2,7 +2,7 @@
 layout: common
 title: Home
 permalink: /
-navId: 1
+nav_id: 1
 ---
 
 ### Welcome to howtoscience.net!

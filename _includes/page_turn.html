@@ -1,0 +1,29 @@
+{% assign navigable_pages = include.navigable_pages %}
+
+{% if page.nav_id %}
+  <nav id=pageTurnNav>
+    <ul>
+      {% if page.nav_id > navigable_pages.first.nav_id %}
+        {% assign prev_page_index = page.nav_id | minus: 2 %}
+        <li>
+          <a href="{{ navigable_pages[prev_page_index].url }}" class="pageTurn">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i><noscript>&#9664;</noscript> Previous
+          </a>
+        </li>
+      {% endif %}
+
+      {% if page.nav_id < navigable_pages.last.nav_id %}
+        <li class="next">
+          <a href="{{ navigable_pages[page.nav_id].url }}" class="pageTurn">
+            {% if page.nav_id == navigable_pages.first.nav_id %}
+              Get Started!
+            {% else %}
+              Next
+            {% endif %}
+            <i class="fa fa-arrow-right" aria-hidden="true"></i><noscript>&#9654;</noscript>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

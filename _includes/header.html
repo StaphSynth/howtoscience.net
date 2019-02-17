@@ -1,0 +1,46 @@
+<header>
+    <ul id="masthead">
+      <li><noscript><p id="jsDisabled">Hey, JavaScript is disabled. Please consider <a href="http://enable-javascript.com/" target="_blank">enabling JavaScript</a> for full use of this site.</p></noscript></li>
+      <li><a href="/"><h1 class="main-heading">howtoscience.net</h1></a></li>
+      <li><a href="/"><h2>A de-mystifying guide to the scientific writing process</h2></a></li>
+    </ul>
+    <nav id="menu">
+      <ul id="menuDrop">
+        <li id="mainNav"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Navigation</a>
+          <ul id="dropDown">
+            {% for navigable_page in include.navigable_pages %}
+              <li
+              {% if page.url contains navigable_page.url %}
+                {% if navigable_page.url != "/" and page.url.size > 1 %}
+                  class="selected"
+                {% endif %}
+                {% if navigable_page.url == page.url %}
+                  class="selected"
+                {% endif %}
+              {% endif %}
+              ><a href="{{ navigable_page.url }}">{{ navigable_page.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li id="home"><a href="/"><i class="fa fa-home" aria-hidden="false"></i><noscript>&#9750;</noscript></a></li>
+      </ul>
+      <ul id="menuActual">
+        {% for navigable_page in include.navigable_pages %}
+          <li><a href="{{ navigable_page.url }}"
+          {% if page.url contains navigable_page.url %}
+            {% if navigable_page.url != "/" and page.url.size > 1 %}
+              class="selected"
+            {% endif %}
+            {% if navigable_page.url == page.url %}
+              class="selected"
+            {% endif %}
+          {% endif %}
+          >{{ navigable_page.title }}</a></li>
+        {% endfor %}
+      </ul> <!-- /menuActual -->
+    </nav>
+  </header>
+  <!-- hide the mobile nav menu. If JS is disabled, the menu will therefore appear by default so the user will still be able to navigate the page -->
+  <script type="text/javascript">
+    document.getElementById("dropDown").style.display = "none";
+  </script>

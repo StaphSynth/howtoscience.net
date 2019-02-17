@@ -3,7 +3,7 @@ layout: common
 title: Results
 description: How to write the results section of a scientific paper or report
 permalink: /results/
-navId: 5
+nav_id: 5
 ---
 ### The Results
 

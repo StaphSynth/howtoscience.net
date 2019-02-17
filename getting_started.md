@@ -2,7 +2,7 @@
 layout: common
 title: Getting Started
 permalink: /getting-started/
-navId: 2
+nav_id: 2
 ---
 
 ### In the Beginning

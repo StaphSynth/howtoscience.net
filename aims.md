@@ -3,7 +3,7 @@ layout: common
 title: Aims
 description: How to write the aims section of a scientific paper or report
 permalink: /aims/
-navId: 4
+nav_id: 4
 ---
 
 ### The Aims
