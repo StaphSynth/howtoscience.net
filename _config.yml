@@ -3,7 +3,9 @@ url: http://howtoscience.net
 markdown: kramdown
 description: An easy-to-read student guide on how to write scientific papers and reports without the boring jargon.
 
-# exclude during build
+include:
+  - _pages
+
 exclude:
   - README.md
 
