@@ -4,13 +4,13 @@
 
 <script type="text/javascript">
   function loadScriptPostRender() {
-    const urls = [
+    var urls = [
       'http://code.jquery.com/jquery-1.11.0.min.js',
       '/assets/javascript/main.js'
     ];
 
     urls.forEach(function(url) {
-      const element = document.createElement('script');
+      var element = document.createElement('script');
       element.src = url;
       element.type = 'text/javascript';
       element.async = false;
