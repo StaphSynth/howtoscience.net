@@ -29,42 +29,18 @@
   </head>
 
   <body>
-
     {% include header.html navigable_pages = navigable_pages %}
 
     <div id="container">
+
       <div id="content">
         {{ content }}
       </div>
+
       {% include page_turn.html navigable_pages = navigable_pages %}
     </div>
 
     {% include footer.html %}
-
-    <script type="text/javascript">
-      //load external JS resources after page render
-      function loadScriptPostRender() {
-        const urls = [
-          'http://code.jquery.com/jquery-1.11.0.min.js',
-          '/assets/javascript/main.js'
-        ];
-
-        urls.forEach((url) => {
-          const element = document.createElement('script');
-          element.src = url;
-          element.type = 'text/javascript';
-          element.async = false;
-          document.body.appendChild(element);
-        });
-      }
-
-      if (window.addEventListener) {
-        window.addEventListener('load', loadScriptPostRender, false);
-      } else if (window.attachEvent) {
-        window.attachEvent('onload', loadScriptPostRender);
-      } else {
-        window.onload = loadScriptPostRender;
-      }
-    </script>
+    {% include script_loader.html %}
   </body>
 </html>
