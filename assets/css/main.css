@@ -435,6 +435,10 @@ FIGURES & LEGENDS
 	border-radius: 15px;
 }
 
+.img-clickable {
+	cursor: pointer;
+}
+
 
 /*****************
 FOOTER
@@ -470,7 +474,7 @@ footer img {
 
 
 /*****************
-Overlay stuff: JS-powered full-size image link styling
+Overlay
 *****************/
 /*Generates a greyed-out page overlay effect to blur the
 background page. An image of interest is then rendered on top*/
@@ -500,6 +504,7 @@ background page. An image of interest is then rendered on top*/
 	margin: auto;
 	max-width: 100%;
 	max-height: 100%;
+	cursor: unset;
 }
 
 /*#overlay p {
