@@ -82,6 +82,10 @@ COLOURS
 /* Background is cream #fffffc. Foreground highlights are dark blue #122256
 In-text links are slightly lighter at #123456 */
 
+header {
+	background-color: #122256;
+}
+
 a:link, a:visited {
   color: #123456;
 }
@@ -90,16 +94,13 @@ body {
 	background: #fffffc;
 }
 
-#masthead {
-	background: #122256;
-}
-
-#menuDrop li {
+#menu-buttons li,
+.drop-down li {
 	border-color: #fffffc!important;
 	background-color: #122256;
 }
 
-#menuDrop li a {
+.drop-down li a {
 	color: #fffffc;
 }
 
@@ -120,7 +121,7 @@ h4 {
 }
 
 footer {
-	Background: #122256;
+	background: #122256;
 	color: #fffffc;
 }
 
@@ -133,17 +134,22 @@ footer {
 	text-shadow: 2px 2px 2px #000;
 }
 
-#dropDown li:active {
+.drop-down li:active,
+.drop-down li:hover {
 	background-color: #fffffc;
 	border-color: #122256;
 }
 
-#dropDown li a:active {
-	color: #122256!important;
+.drop-down li a {
 	border-style: solid!important;
 	border: 2px;
 	border-radius: 15px;
 	border-color: #122256;
+}
+
+.drop-down li a:active,
+.drop-down li a:hover {
+	color: #122256!important;
 	text-shadow: none;
 }
 
@@ -161,7 +167,7 @@ footer {
 	color: #122256!important;
 }
 
-#menuDrop li.selected {
+.drop-down li.selected {
 	color: #122256!important;
 	background-color: #fffffc;
 	box-shadow: 0px 0px 0px 2px #122256 inset;
@@ -210,6 +216,10 @@ footer {
 /*****************
 MASTHEAD
 *****************/
+header {
+	box-shadow: 0 4px 3px -3px #000;
+	margin-bottom: 1em;
+}
 
 #jsDisabled {
 	background-color: yellow;
@@ -246,6 +256,10 @@ MASTHEAD
 /*****************
 NAVIGATION
 *****************/
+nav#menu {
+	padding: 0 2.5%;
+}
+
 #menu {
   text-align: center;
 	margin: 0 0 0.5em;
@@ -256,36 +270,39 @@ NAVIGATION
 	display: none;
 }
 
-/*menuDrop is a JavaScript-powered drop-down menu displayed at phone resolutions*/
-#menuDrop {
-	padding: 0 2.5%;
-	padding-bottom: 0.25rem;
-	display: -webkit-flex;
+#menu-buttons,
+.drop-down {
+	/* padding: 0 2.5%; */
+	/* padding-bottom: 0.25rem; */
 	display: flex;
 	flex-wrap: nowrap;
-	-webkit-flex-wrap: nowrap;
 	background-color: #122256;
-	box-shadow: 0 4px 3px -3px #000;
 }
 
-#menuDrop li {
+#menu-buttons li,
+.drop-down li {
 	border-radius: 15px;
 	border: 2px;
-	margin: 0.5rem 0.25rem 0.5rem 0;
+	/* margin: 0.5rem 0.25rem 0.5rem 0; */
 	border-style: solid;
 	text-shadow: 2px 2px 2px #000;
 	box-shadow: 2px 2px 5px #000;
 }
 
-#menuDrop li a {
+#menu-buttons li a,
+.drop-down li a {
 	display: block;
 	padding: 0.5rem;
 	white-space: nowrap;
 	border-radius: 15px;
 }
 
-#mainNav {
-	padding: 0.3rem 0 0;
+.drop-down li~li {
+	margin-top: 0.5rem;
+}
+
+#nav-button {
+	/* padding: 0.3rem 0 0; */
 	flex-grow: 3;
 	text-align: left;
 }
@@ -296,20 +313,37 @@ NAVIGATION
 	align-self: flex-start;
 }
 
-/*dropDown is the <ul> that contains the nav list elements that appears when the 'Navigation' link is activated*/
-#dropDown {
+.drop-down {
+	overflow-y: hidden;
 	margin: 0.5rem 0;
 	display: flex;
 	display: -webkit-flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+	max-height: 0px;
+	transition-duration: 1s;
+	/* transition-timing-function: cubic-bezier(0, 1, 0.5, 1); */
 }
 
-#dropDown li {
-	margin: 0.25em 0.25em;
+.drop-down.open {
+	overflow-y: hidden;
+	max-height: 500px;
+	transition-property: all;
+	transition-duration: 1s;
+	/* transition-timing-function: cubic-bezier(0, 1, 0.5, 1); */
 }
 
-#dropDown li a {
+#nav-button {
+	margin-right: 0.5rem;
+}
+
+#nav-button button {
+	display: block;
+	background: inherit;
+	border: none;
+}
+
+.drop-down li a {
 	padding: 0.5em;
 }
 
@@ -540,14 +574,14 @@ Responsive CSS
 		font-size: 1.125em;
 	}
 
-	#dropDown {
+	.drop-down {
 		justify-content: center;
 		-webkit-justify-content: center;
 		flex-direction: row;
 		-webkit-flex-direction: row;
 	}
 
-	#dropDown li {
+	.drop-down li {
 		margin-left: 0.25em;
 		margin-right: 0.25em;
 	}
@@ -588,7 +622,7 @@ Responsive CSS
 	/*End masthead section*/
 
 	/*Nav section*/
-	#menuDrop {
+	#menu-buttons {
 		display: none;
 	}
 

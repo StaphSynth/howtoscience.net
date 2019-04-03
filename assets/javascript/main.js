@@ -40,17 +40,26 @@ Mobile device drop-down menu
 *******************************/
 
 (function dropDownMenu() {
-  var navButton = document.querySelector('#nav-button');
-  var mobileMenu = document.querySelector('#dropDown');
+  var navButton = document.querySelector('#nav-button button');
+  var mobileMenu = document.querySelector('.drop-down');
 
   navButton.addEventListener('click', function() {
-    switch(mobileMenu.style.display) {
-      case 'block':
-        mobileMenu.style.display = 'none';
-        break;
-      case 'none':
-        mobileMenu.style.display = 'block';
-        break;
+    // switch(mobileMenu.style.display) {
+    //   case 'block':
+    //     mobileMenu.style.display = 'none';
+    //     break;
+    //   case 'none':
+    //     mobileMenu.style.display = 'block';
+    //     break;
+    // }
+
+    console.log(mobileMenu);
+    console.log(mobileMenu.classList);
+
+    if (mobileMenu.classList.contains('open')) {
+      mobileMenu.classList.remove('open');
+    } else {
+      mobileMenu.classList.add('open');
     }
   });
 }());

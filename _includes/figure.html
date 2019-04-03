@@ -4,16 +4,12 @@
 {% endcomment %}
 
 <div class="figure">
-  {% if include.clickable and include.img %}
-    <a class="figure_link" href="/assets/images/{{ include.img }}" target="_blank">
-  {% endif %}
-
   {% if include.img %}
-    <img src="/assets/images/{{ include.img }}" alt="{{ include.alt }}">
-  {% endif %}
-
-  {% if include.clickable %}
-    </a>
+    <img
+      src="/assets/images/{{ include.img }}"
+      alt="{{ include.alt }}"
+      {% if include.clickable %}class="img-clickable"{% endif %}
+    />
   {% endif %}
 
   {% if include.example %}
